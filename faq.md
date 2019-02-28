@@ -31,14 +31,14 @@ system2(R, c("CMD", "config", "CXX11"))
 # C:/Rtools/mingw_64/bin/g++
 ```
 
-All of the above methods is used by R on all operating systems (Windows, MacOS, Linux).
+All of the above is the same on all operating systems (Windows, MacOS, Linux). But the following section is Windows specific.
 
 
 ## Using a non-default compiler path on Windows
 
-If for whatever reason you want R to use gcc from another path (which is not recommended) you can override the path to gcc using the `BINPREF` environment variable. As shown above, the default value of `BINPREF` in R 3.5 is hardcoded to `"C:/Rtools/mingw_$(WIN)/bin/"`. 
+If for whatever reason you want R to use gcc from another path (which is not recommended) you can override the path to gcc using the `BINPREF` environment variable. As shown above, the default value of `BINPREF` in R 3.5 is hardcoded to `"C:/Rtools/mingw_$(WIN)/bin/"`.  When invoking the compiler, `make` will automatically resolve `$(WIN)` to either `"32"` or `"64"` depending on the target architecture. 
 
-When invoking the compiler, `make` will automatically resolve `$(WIN)` to either `"32"` or `"64"` depending on the target architecture. If you use a custom `BINPREF` it is important to use `"$(WIN)"` to specify your target. To show how this works, try running the following in R for Windows:
+If you set a custom `BINPREF` it is important to embed the `"$(WIN)"` variable to specify the target. To illustrate how this works, try running the following in R for Windows:
 
 ```r
 Sys.setenv(BINPREF = "C:/mycompiler/something/mingw$(WIN)/")
