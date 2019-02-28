@@ -86,7 +86,7 @@ The latest CRAN version of rJava will find the `jvm.dll` automatically, without 
  - To use rJava in 64-bit R, you need [_Java for Windows x64_](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
  - To build or check R packages with multi-arch (the default) you need to  __install both__ _Java For Windows x64_ as well as _Java for Windows x86_. On Win 64, the former installs in `C:\Program files\Java\` and the latter in `C:\Program Files (x86)\Java\` so they do not conflict.
 
-As of Java version 9, support for x86 (win32) has been discontinued. Hence the latest working multi-arch setup is to install both [jdk-8u172-windows-i586.exe](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) and [jdk-8u172-windows-x64.exe](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) and then the binary package from CRAN: 
+As of Java version 9, support for x86 (win32) has been discontinued. Hence the latest working multi-arch setup is to install both [jdk-8u201-windows-i586.exe](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) and [jdk-8u201-windows-x64.exe](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) and then the binary package from CRAN: 
 
 ```r
 install.packages("rJava")
