@@ -13,7 +13,7 @@ It is highly recommended to __install Rtools in the default location__ where R e
 
 ## Where R looks for the compiler
 
-The way R finds the compiler path is a bit convoluted for historical reasons, but it is quite simple. The most important thing is that the correct version of `make` is on the path. __It is not needed to put gcc on the path!__
+The most important thing is that the correct version of `make` is on the path. __It is not needed to put gcc on the path!__
 
 ```r
 # Check your path
