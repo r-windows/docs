@@ -8,12 +8,12 @@ Rtools is the toolchain bundle that is used to build R for Windows and R package
  - Rtools35 (gcc 4.9.3): used by R versions 3.3 - 3.6. This is probably what you need.
  - Rtools40 (gcc 8.3.0): experimental next generation, see [documentation](https://cran.r-project.org/bin/windows/testing/rtools40.html)
 
-It is highly recommended to always install Rtools in the default path, so that R can find it when building packages.
+It is highly recommended to __install Rtools in the default location__ where R expects to find it when building packages. The default location is `C:/Rtools/` for Rtools35 and `C:/rtools40/` for Rtools40.
 
 
 ## Where R looks for the compiler
 
-The way R finds the compiler path is a bit convoluted for historical reasons, but it is quite simple. The most important thing is that the correct version of `make` is on the path. _On Windows it is not needed to put gcc on the path!_
+The way R finds the compiler path is a bit convoluted for historical reasons, but it is quite simple. The most important thing is that the correct version of `make` is on the path. __It is not needed to put gcc on the path!__
 
 ```r
 # Check your path
@@ -23,7 +23,7 @@ Sys.getenv('PATH')
 Sys.which('make')
 ```
 
-If this works, R can use the values provided by `R CMD config` to lookup the path to the compiler and other build tools. To test this manually in R, let's lookup the path to our C++11 compiler:
+Once `make` is available, R will lookup make variables via `R CMD config` to find the path to gcc and other tools. To test this manually in R, let's lookup the path to the C++11 compiler:
 
 ```r
 R <- file.path(R.home('bin'), 'R')
@@ -31,7 +31,7 @@ system2(R, c("CMD", "config", "CXX11"))
 # C:/Rtools/mingw_64/bin/g++
 ```
 
-All of the above is the same on all operating systems (Windows, MacOS, Linux). But the following section is Windows specific.
+This system is the same on all operating systems (Windows, MacOS, Linux). However the following section is specific to Windows:
 
 
 ## Using a non-default compiler path on Windows
