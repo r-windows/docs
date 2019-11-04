@@ -66,7 +66,7 @@ An example is the old `XML` package. First install `libxml2` in rtools:
 
 ```sh
 # Run this in Rtools
-pacman -S mingw-w64-{i686,x86_64}-libxml2
+pacman -S mingw-w64-{i686,x86_64}-libxml2 mingw-w64-{i686,x86_64}-xz
 ```
 
 And then install `XML` like this:
