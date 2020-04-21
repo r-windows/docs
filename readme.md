@@ -23,10 +23,10 @@ You can do this with a text editor, or you can even do it from R like so:
 
 ```r
 # Automatically put Rtools on the PATH
-writeLines('PATH="${RTOOLS40_HOME}\\usr\\bin;${PATH}"', file = "~/.Renviron")
+writeLines('PATH="${RTOOLS40_HOME}\\usr\\bin;${PATH}"', con = "~/.Renviron")
 ```
 
-Now restart R and verify that `make` can be found, which should show the path to your rtools installion. If that works you can try to install a package from source:
+Now restart R and verify that `make` can be found, which should show the path to your rtools installation. If this works you can try to install an R package from source:
 
 ```r
 # Confirm that make.exe is on the PATH
