@@ -1,33 +1,43 @@
 # R on Windows FAQ
 
-## When do I need Rtools ?
-
+These are some common issues related to installing R packages on Windows with Rtools. This complements the official [R-FAQ](https://cran.r-project.org/doc/FAQ/R-FAQ.html) from CRAN.
 
 
 ## What is Rtools
 
-Rtools is the toolchain bundle that is used to build R for Windows and R packages that contain compiled code. You can download it from [CRAN](https://cran.r-project.org/bin/windows/Rtools/). There are currently two version of Rtools:
+Rtools is the toolchain bundle that is used on Windows to build R base and R packages that contain compiled code. You can download it from [CRAN](https://cran.r-project.org/bin/windows/Rtools/). There are currently two version of Rtools:
 
- - Rtools35 (gcc 4.9.3): used by R versions 3.3 - 3.6. This is probably what you need.
- - Rtools40 (gcc 8.3.0): experimental next generation, see [documentation](https://cran.r-project.org/bin/windows/testing/rtools40.html)
+ - Rtools35 (gcc 4.9.3): used by old R versions 3.3 - 3.6. No longer updated.
+ - Rtools40 (gcc 8.3.0): current toolchain, used for R 4.0 and up.
 
-It is recommended to install Rtools in the default location which is `C:/rtools40/` for Rtools40. If you install it in another location, make sure there are no spaces or diacritics in the path name, as that might not work for all packages.
+You only need Rtools if you want to compile R packages from source that contain C/C++/Fortran. By default, R for Windows installs the precompiled _binary packages_ from CRAN, for which you do not need rtools.
+
+## How to install Rtools40:
+
+Please see instructions in: https://github.com/r-windows/docs
 
 
-## Where R looks for the compiler
+## Why does Rtools not put itself on the PATH automatically?
 
-The most important thing is that the correct version of `make` is on the path. __It is not needed to put gcc on the path!__
+Some versions of rtools in the past would automatically alter the global windows system PATH variable and add the rtools path. This was problematic for several reasons:
+
+The main problem is that other Windows programs may also attempt to do this (Strawberry Perl for example) and hence if those programs are installed after rtools, they may mask the rtools utilities from the PATH. But it would also hold vice-versa: prepending the windows system PATH with the rtools utilities could have undesired side-effects for other software relying on the path.
+
+For these reasons, the best way to set the PATH for R is in your `~/.Renviron` file.
+
+
+## How does R find compilers
+
+The most important thing is that the rtools40 `make` is on the path. It is not needed to put gcc on the path.
 
 ```r
 # Check your path
 Sys.getenv('PATH')
 
-# Check if make is on the path
+# Confirm that make.exe is on the PATH
 Sys.which('make')
+## "C:\\rtools40\\usr\\bin\\make.exe"
 ```
-
-
-
 
 Once `make` is available, R will lookup make variables via `R CMD config` to find the path to gcc and other tools. To test this manually in R, let's lookup the path to the C++11 compiler:
 
@@ -45,19 +55,20 @@ This system is the same on all operating systems (Windows, MacOS, Linux).
 The script below looks up the compiler via `R CMD config` and then tests that it works. The same script can be used on any platform (not just windows).
 
 ```r
+r_cmd_config <- function(var){
+  tools::Rcmd(c("config", var), stdout = TRUE)
+}
+
 test_compiler <- function(){
   testprog <- '#include <iostream>\nint main() {std::cout << "Hello World!";}'
   make <- Sys.which('make')
   if(!nchar(make))
     stop("Did not find 'make' on the PATH")
-  R <- file.path(R.home('bin'), 'R')
-  CXX <- system2(R, c("CMD", "config", "CXX"), stdout = TRUE)
-  if(!nchar(CXX))
-    stop("Failed to lookup 'R CMD config CXX'")
+  CXX <- r_cmd_config("CXX")
   src <- tempfile(fileext = '.cpp')
   obj <- sub('cpp$', 'o', src)
   writeLines(testprog, con = src)
-  out <- system2('make', c(obj, paste0("CXX=", CXX)), stdout = TRUE, stderr = TRUE)
+  out <- system2('make', c(obj, sprintf('CXX="%s"', CXX)))
   if(!file.exists(obj))
     stop("Failed to compile example program: ", out)
   TRUE
@@ -66,7 +77,8 @@ test_compiler <- function(){
 
 ## How to build base R on Windows
 
-See the [rwinlib/base](https://github.com/rwinlib/base) repository for scripts and documenation for building the R for Windows installer from source.
+See the [r-windows/r-base](https://github.com/r-windows/r-base) repository for scripts and documenation for building the R for Windows installer from source.
+
 
 ## How to install rJava on Windows?
 
@@ -88,6 +100,5 @@ The binary package from CRAN should pick up on the jvm by itself. __Experts only
 install.packages('rJava', type = 'source', INSTALL_opts='--merge-multiarch')
 ```
 
-## Why does Rtools not put itself on the PATH ?
 
 

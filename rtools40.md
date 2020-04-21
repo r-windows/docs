@@ -2,32 +2,15 @@
 
 New toolchain for R on Windows based on gcc 8.3.0 and msys2.
 
-## Install Rtools40 and R-testing
+## Installing Rtools40
 
 Rtools40 does not conflict with other versions of Rtools and can be installed alongside existing Rtools 3.5 installations.
 
-- Use [rtools40-x86_64.exe](rtools40-x86_64.exe) on 64 bit Windows systems (recommended, includes `i386` and `x64` toolchains)
-- Use [rtools40-i686.exe](rtools40-i686.exe) on 32 bit Windows systems (includes `i386` toolchain only)
+- Use [rtools40-x86_64.exe](https://cran.r-project.org/bin/windows/Rtools/rtools40-x86_64.exe) on 64 bit Windows (recommended, includes `i386` and `x64` toolchains)
+- Use [rtools40-i686.exe](https://cran.r-project.org/bin/windows/Rtools/rtools40-i686.exe) on 32 bit Windows (includes `i386` toolchain only)
 
-The daily build of `R-testing` is a modified version of R-devel configured for the new toolchain. 
 
-- Download [R-testing-win.exe](R-testing-win.exe)
-
-For now, `R-testing` automatically sets the `PATH` in R to use `make` and `gcc` from rtools40. No need to modify the Windows system `PATH`. This is a temporary solution to run `R-testing` alongside R 3.5.1. Make sure you do not override the `PATH` in your `~/.Renviron` file.
-
-## Help and Reporting Problems
-
-If you find a problem in a package or cannot make it work, open a ticket here: https://github.com/r-windows/checks/issues. Only report issues here that are specific to the new Rtools toolchain. Check that:
-
- - The problem does not pre-exist on the CRAN with the current Windows toolchain
- - The error/warning does not appear with GCC-8 on Fedora/Debian on CRAN
- - One issue per package
-
-Please be patient, a toolchain upgrade with 12k packages is a complex operation.
-
-## System Software
-
-Because CRAN does not provide binaries for the new toolchain yet, `R-testing` installs all packages from source.
+## System Libraries
 
 Some R packages require external libraries or software to build. Rtools40 includes a package manager which you can use to install additional [rtools packages](https://github.com/r-windows/rtools-packages). There should be a shortcut to the Rtools terminal in your Start Menu.
 

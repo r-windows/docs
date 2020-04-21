@@ -5,7 +5,6 @@ As of version 4.0 (April 2020) R for Windows uses a new toolchain called Rtools4
 This version of Rtools upgrades the mingw-w64 gcc toolchains to 8.3.0, and also introduces a new build system based on [msys2](https://www.msys2.org/), which makes easier to build and maintain R itself as well as system libraries needed by R packages on Windows.
 
 
-
 ## Installing Rtools40
 
 > Note that you only need rtools40 if you want to build R packages from source that contain C/C++/Fortran code. By default, R for Windows installs the precompiled _binary packages_ from CRAN, for which you do not need rtools!
