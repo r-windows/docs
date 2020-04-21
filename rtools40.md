@@ -1,6 +1,6 @@
 # Rtools 40
 
-New experimental toolchain for R on Windows based on gcc 8 and msys2.
+New toolchain for R on Windows based on gcc 8.3.0 and msys2.
 
 ## Install Rtools40 and R-testing
 

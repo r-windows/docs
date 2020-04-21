@@ -1,5 +1,8 @@
 # R on Windows FAQ
 
+## When do I need Rtools ?
+
+
 
 ## What is Rtools
 
@@ -8,7 +11,7 @@ Rtools is the toolchain bundle that is used to build R for Windows and R package
  - Rtools35 (gcc 4.9.3): used by R versions 3.3 - 3.6. This is probably what you need.
  - Rtools40 (gcc 8.3.0): experimental next generation, see [documentation](https://cran.r-project.org/bin/windows/testing/rtools40.html)
 
-It is highly recommended to __install Rtools in the default location__ where R expects to find it when building packages. The default location is `C:/Rtools/` for Rtools35 and `C:/rtools40/` for Rtools40.
+It is recommended to install Rtools in the default location which is `C:/rtools40/` for Rtools40. If you install it in another location, make sure there are no spaces or diacritics in the path name, as that might not work for all packages.
 
 
 ## Where R looks for the compiler
@@ -23,6 +26,9 @@ Sys.getenv('PATH')
 Sys.which('make')
 ```
 
+
+
+
 Once `make` is available, R will lookup make variables via `R CMD config` to find the path to gcc and other tools. To test this manually in R, let's lookup the path to the C++11 compiler:
 
 ```r
@@ -31,23 +37,7 @@ system2(R, c("CMD", "config", "CXX11"))
 # C:/Rtools/mingw_64/bin/g++
 ```
 
-This system is the same on all operating systems (Windows, MacOS, Linux). However the following section is specific to Windows:
-
-
-## Using a non-default compiler path on Windows
-
-If for whatever reason you want R to use gcc from another path (which is not recommended) you can override the path to gcc using the `BINPREF` environment variable. As shown above, the default value of `BINPREF` in R 3.5 is hardcoded to `"C:/Rtools/mingw_$(WIN)/bin/"`.  When invoking the compiler, `make` will automatically resolve `$(WIN)` to either `"32"` or `"64"` depending on the target architecture. 
-
-If you set a custom `BINPREF` it is important to embed the `"$(WIN)"` variable to specify the target. To illustrate how this works, try running the following in R for Windows:
-
-```r
-Sys.setenv(BINPREF = "C:/mycompiler/something/mingw$(WIN)/")
-R <- file.path(R.home('bin'), 'R')
-CXX11 <- system2(R, c("CMD", "config", "CXX11"))
-# C:/mycompiler/something/mingw64/g++
-```
-
-Again, you should never change `BINPREF` when you installed the correct Rtools in the default location. Also if you are not correctly using `"$(WIN)"` inside BINPREF, R might use the compiler for the wrong architecture and bad things will happen.
+This system is the same on all operating systems (Windows, MacOS, Linux).
 
 
 ## How to test if the compiler is available in R?
@@ -97,5 +87,7 @@ The binary package from CRAN should pick up on the jvm by itself. __Experts only
 ```r
 install.packages('rJava', type = 'source', INSTALL_opts='--merge-multiarch')
 ```
+
+## Why does Rtools not put itself on the PATH ?
 
 
