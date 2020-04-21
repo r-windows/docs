@@ -11,33 +11,33 @@ To use rtools40, download the installer from CRAN:
  - On Windows 64-bit: [rtools40-x86_64.exe](https://cran.r-project.org/bin/windows/Rtools/rtools40-x86_64.exe) (recommended: includes both i386 and x64 compilers)
  - On Windows 32-bit: [rtools40-i686.exe](https://cran.r-project.org/bin/windows/Rtools/rtools40-i686.exe) (i386 compilers only)
 
-After the installation you need to perform _one more step_ to compile R packages: you need to put the location of the rtools make utilities (`bash`, `make`, etc) on the PATH. The easiest way to do so is create a text file `.Renviron` in your Documents folder which contains the following line:
+![installer](https://user-images.githubusercontent.com/216319/79896057-25fa8000-8408-11ea-9069-d01bfbd67786.png)
+
+After the installation is completed, you need to perform __one more step__ to be able to compile R packages: you need to put the location of the rtools _make utilities_ (`bash`, `make`, etc) on the `PATH`. The easiest way to do so is create a text file `.Renviron` in your Documents folder which contains the following line:
 
 ```
 PATH="${RTOOLS40_HOME}\usr\bin;${PATH}"
 ```
 
-You can do this with a text editor, or you can even do it from R:
+You can do this with a text editor, or you can even do it from R like so:
 
 ```r
 # Automatically put Rtools on the PATH
 writeLines('PATH="${RTOOLS40_HOME}\\usr\\bin;${PATH}"', file = "~/.Renviron")
 ```
 
-Now restart R and verify that `make` can be found:
+Now restart R and verify that `make` can be found, which should show the path to your rtools installion. If that works you can try to install a package from source:
 
 ```r
+# Confirm that make.exe is on the PATH
 Sys.which("make")
 ## "C:\\rtools40\\usr\\bin\\make.exe"
-```
 
-This should show the path to the `make.exe` that is included with Rtools. Now test if you can compile an R package:
-
-```r
+# Try to install a package
 install.packages("jsonlite", type = "source")
 ```
 
-If this works, you're good! See the links below to learn more about rtools40.
+If this succeeds, you're good! See the links below to learn more about rtools40.
 
 
 ## Additional Resources
