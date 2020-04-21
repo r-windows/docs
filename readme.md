@@ -13,7 +13,7 @@ To use rtools40, download the installer from CRAN:
 
 ![installer](https://user-images.githubusercontent.com/216319/79896057-25fa8000-8408-11ea-9069-d01bfbd67786.png)
 
-After the installation is completed, you need to perform __one more step__ to be able to compile R packages: you need to put the location of the rtools _make utilities_ (`bash`, `make`, etc) on the `PATH`. The easiest way to do so is create a text file `.Renviron` in your Documents folder which contains the following line:
+__Important!__ After the installation is completed, you need to perform __one more step__ to be able to compile R packages: you need to put the location of the rtools _make utilities_ (`bash`, `make`, etc) on the `PATH`. The easiest way to do so is create a text file `.Renviron` in your Documents folder which contains the following line:
 
 ```
 PATH="${RTOOLS40_HOME}\usr\bin;${PATH}"
