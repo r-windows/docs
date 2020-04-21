@@ -1,6 +1,10 @@
 # R for Windows and Rtools40
 
-As of version 4.0 (April 2020) R for Windows uses a new toolchain called Rtools40. This version upgrades the mingw-w64 gcc toolchains to 8.3.0, and also introduces a new build system based on [msys2](https://www.msys2.org/), which makes easier to build R for Windows, as well as external system libraries needed by R packages.
+As of version 4.0 (April 2020) R for Windows uses a new toolchain called Rtools40. 
+
+This version of Rtools upgrades the mingw-w64 gcc toolchains to 8.3.0, and also introduces a new build system based on [msys2](https://www.msys2.org/), which makes easier to build and maintain R itself as well as system libraries needed by R packages on Windows.
+
+
 
 ## Installing Rtools40
 
@@ -42,14 +46,12 @@ If this succeeds, you're good! See the links below to learn more about rtools40.
 
 ## Additional Resources
 
-
-Documentation for the new build infrastructure based on Rtools40.
-
+Documentation about rtools40 for R users and package authors:
 
  - [rtools40](rtools40.md): some info about the new rtools build system
- - [faq](faq.md) common problems with R on Windows
+ - [faq](faq.md) common problems with Rtools40 and R on Windows
 
- Other resources for more advanced users:
+ Other resources with information about building R and system libraries:
 
  - [r-base](https://github.com/r-windows/r-base#readme): Scripts for building R for Windows using Rtools40.
  - [rtools-packages](https://github.com/r-windows/rtools-packages#readme): Toolchains and static libraries for Rtools 4.0 (GCC 8+)
