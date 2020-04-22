@@ -14,5 +14,6 @@ render("readme.md", html_document(self_contained = F, mathjax = NULL, highlight 
   theme = NULL, css='https://cran.r-project.org/web/CRAN_web.css'), 'cranstyle.html')
 txt <- readLines('cranstyle.html')
 txt <- sub('<title>.*</title>', '<title>Using Rtools40 on Windows</title>', txt)
+txt <- sub('.*<script src=".*', "", txt)
 writeLines(txt, 'cranstyle.html')
 browseURL('cranstyle.html')

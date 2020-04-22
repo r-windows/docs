@@ -55,7 +55,7 @@ If this succeeds, you're good to go! See the links below to learn more about rto
 ---
 
 
-## Additional Resources
+## Further Documentation
 
 More documentation about using rtools40 for R users and package authors:
 
