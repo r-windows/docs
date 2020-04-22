@@ -1,14 +1,14 @@
-# R for Windows and Rtools40
+# Using Rtools40 on Windows
 
-As of version 4.0 (April 2020) R for Windows uses a new toolchain called Rtools40. 
+As of version 4.0 (April 2020) R for Windows uses a brand new toolchain bundle called Rtools40. 
 
-This version of Rtools upgrades the mingw-w64 gcc toolchains to 8.3.0, and also introduces a new build system based on [msys2](https://www.msys2.org/), which makes easier to build and maintain R itself as well as system libraries needed by R packages on Windows.
+This version of Rtools upgrades the mingw-w64 gcc toolchains to 8.3.0, and also introduces a new build system based on [msys2](https://www.msys2.org/), which makes easier to build and maintain R itself as well as system libraries needed by R packages on Windows. For more information about this, see the links in the bottom of this document.
 
-__Older versions of Rtools:__ This document talks about Rtools40 as used for R-4.0 and up. For information about older versions of rtools (used up till R 3.6), please see [this page](https://cran.r-project.org/bin/windows/Rtools/history.html).
+**Older versions of Rtools:** This document talks about Rtools40, the current version used for R-4.0 and up. For previous versions of Rtools (used up till R 3.6), please see [this page](https://cran.r-project.org/bin/windows/Rtools/history.html).
 
 ## Installing Rtools40
 
-Note that you only need rtools40 if you want to build R packages which contain C/C++/Fortran code. By default, R for Windows installs the precompiled _binary packages_ from CRAN, for which you do not need rtools!
+_Note that you only need rtools40 if you want to build R packages which contain C/C++/Fortran code. By default, R for Windows installs the precompiled "binary packages" from CRAN, for which you do not need rtools!_
 
 To use rtools40, download the installer from CRAN:
 
@@ -17,7 +17,7 @@ To use rtools40, download the installer from CRAN:
 
 ![installer](https://user-images.githubusercontent.com/216319/79896057-25fa8000-8408-11ea-9069-d01bfbd67786.png)
 
-__Important!__ After the installation is completed, you need to perform __one more step__ to be able to compile R packages: you need to put the location of the rtools _make utilities_ (`bash`, `make`, etc) on the `PATH`. The easiest way to do so is create a text file `.Renviron` in your Documents folder which contains the following line:
+After the installation is completed, you need to perform __one more step__ to be able to compile R packages: you need to put the location of the rtools _make utilities_ (`bash`, `make`, etc) on the `PATH`. The easiest way to do so is create a text file `.Renviron` in your Documents folder which contains the following line:
 
 ```
 PATH="${RTOOLS40_HOME}\usr\bin;${PATH}"
@@ -41,7 +41,7 @@ Sys.which("make")
 install.packages("jsonlite", type = "source")
 ```
 
-If this succeeds, you're good! See the links below to learn more about rtools40.
+If this succeeds, you're good! See the links below to learn more about rtools40 and the Windows build infrastructure.
 
 
 ## Additional Resources
