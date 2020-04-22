@@ -4,10 +4,11 @@ As of version 4.0 (April 2020) R for Windows uses a new toolchain called Rtools4
 
 This version of Rtools upgrades the mingw-w64 gcc toolchains to 8.3.0, and also introduces a new build system based on [msys2](https://www.msys2.org/), which makes easier to build and maintain R itself as well as system libraries needed by R packages on Windows.
 
+__Older versions of Rtools:__ This document talks about Rtools40 as used for R-4.0 and up. For information about older versions of rtools (used up till R 3.6), please see [this page](https://cran.r-project.org/bin/windows/Rtools/history.html).
 
 ## Installing Rtools40
 
-> Note that you only need rtools40 if you want to build R packages from source that contain C/C++/Fortran code. By default, R for Windows installs the precompiled _binary packages_ from CRAN, for which you do not need rtools!
+Note that you only need rtools40 if you want to build R packages which contain C/C++/Fortran code. By default, R for Windows installs the precompiled _binary packages_ from CRAN, for which you do not need rtools!
 
 To use rtools40, download the installer from CRAN:
 
@@ -47,12 +48,12 @@ If this succeeds, you're good! See the links below to learn more about rtools40.
 
 Documentation about rtools40 for R users and package authors:
 
- - [rtools40](rtools40.md): some info about the new rtools build system
- - [faq](faq.md) common problems with Rtools40 and R on Windows
+ - [rtools40](https://github.com/r-windows/docs/blob/master/rtools40.md#readme): some info about the new rtools build system
+ - [faq](https://github.com/r-windows/docs/blob/master/faq.md#readme): common issues with Rtools40 and R on Windows.
 
  Other resources with information about building R and system libraries:
 
  - [r-base](https://github.com/r-windows/r-base#readme): Scripts for building R for Windows using Rtools40.
  - [rtools-packages](https://github.com/r-windows/rtools-packages#readme): Toolchains and static libraries for Rtools 4.0 (GCC 8+)
- - [rtools-backports](https://github.com/r-windows/rtools-backports): Backported C/C++ libraries for the gcc-4.9.3 legacy toolchain (for R 3.3 - 3.6)
- - [rtools-installer](https://github.com/r-windows/rtools-installer): Builds the Rtools40 installer bundle.
+ - [rtools-backports](https://github.com/r-windows/rtools-backports#readme): Backported C/C++ libraries for the gcc-4.9.3 legacy toolchain (for R 3.3 - 3.6)
+ - [rtools-installer](https://github.com/r-windows/rtools-installer#readme): Builds the Rtools40 installer bundle.
