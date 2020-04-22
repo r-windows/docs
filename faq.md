@@ -26,6 +26,22 @@ The main problem is that other Windows programs may also attempt to do this (Str
 For these reasons, the best way to set the PATH for R is in your `~/.Renviron` file.
 
 
+## What is the difference between the msys, mingw32, and mingw64 shells?
+
+These are almost the same, the only difference is the default PATH. The mingw32/mingw64 shell automatically put the respective gcc version on the path, whereas the msys shell has no toolchain on the path. Other than that there is no difference.
+
+
+## How to extract a tarball with symlinks
+
+Windows does not support symlinks. Cygwin has several ways to emulate symlinks, but each has limitations. To extract a tarball which contains symlinks (such as the official R source releases) you can set this environment variable: 
+
+```
+MSYS="winsymlinks:lnk"
+```
+
+This will create symlinks as Windows shortcuts with a special header and the R/O attribute set.
+
+
 ## How does R find compilers
 
 The most important thing is that the rtools40 `make` is on the path. It is not needed to put gcc on the path.
