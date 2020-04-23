@@ -136,7 +136,7 @@ mingw64 mingw-w64-x86_64-bwidget 1.9.12-1
 mingw64 mingw-w64-x86_64-bzip2 1.0.8-1 [installed]
 ```
 
-In rtools (or msys2) all mingw packages are prefixed with `mingw-w64-686-` for the win32 version and with `mingw-w64-x86_64-` for the win64 version of the C/C++ library. For installing CRAN packages, we usually need both.
+In rtools (or msys2) all packages are prefixed with `mingw-w64-686-` for the 32-bit version and with `mingw-w64-x86_64-` for the 64-bit version. For building CRAN packages, we usually need both 32 and 64 bit..
 
 
 Use `pacman -Su` to update all packages that you have installed already. This can be combined with `-y` which we explained earlier, refreshes the repository index:
@@ -153,9 +153,9 @@ You can add `--noconfirm` to any of the commands to skip the confirmation. This 
 Find out more at the [pacman website](https://wiki.archlinux.org/index.php/pacman).
 
 
-## Compiling R Packages with Custom Flags
+## Compiling R packages with custom Flags
 
-Some older R packages do not use the correct flags by default and need a little help. You can pass additional compiler and linker flags by setting these environment variables:
+Some R packages do not use the correct flags by default and need a little help. You can pass additional compiler and linker flags by setting these environment variables:
 
  - `LOCAL_CPPFLAGS`: custom C/C++ flags passed when compiling
  - `LOCAL_LIBS`: custom flags when linking
@@ -172,17 +172,29 @@ And then install `XML` like this:
 ```r
 # Run this in R
 Sys.setenv(LOCAL_CPPFLAGS = "-I$(MINGW_PREFIX)/include/libxml2")
-install.packages("XML")
+install.packages("XML", type = "source")
 ```
 
-## Build Server
+## Building and contributing rtools packages
 
-I run this every day on my build server to update and install all available rtools packages:
+The readme file in the [r-windows/rtools-packages](https://github.com/r-windows/rtools-packages#readme) repository explains how to build your own system libraries, and possibly contribute them to rtools.
+
+
+## Building base R
+
+The same pacman libraries are used to build R packages are also used when building R itself! Have a look at the [r-base](https://github.com/r-windows/rtools-base#readme) repository to see how we build R for Windows.
+
+
+## Running a build server
+
+If you run a winbuilder-like build server, it can be useful to install all the available system libraries from pacman, and keep them up-to-date. Obviously this takes a lot of space, regular users shouldn't do this!
+
+The script below updates and installs __all packages from pacman__:
 
 ```sh
 # Update packages !
 pacman -Syu --noconfirm
 
-# Install ALL the packages !!
+# Careful! Installs ALL the pacman packages !!
 pacman -S --needed --noconfirm $(pacman -Slq | grep mingw-w64-)
 ```
