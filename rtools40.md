@@ -175,6 +175,8 @@ Sys.setenv(LOCAL_CPPFLAGS = "-I$(MINGW_PREFIX)/include/libxml2")
 install.packages("XML", type = "source")
 ```
 
+The `$(MINGW_PREFIX)` variable always refers to the root of the toolchain path, i.e. `/mingw32` when compiling for 32-bit and `/mingw64` when compiling for 64-bit.
+
 ## Building and contributing rtools packages
 
 The readme file in the [r-windows/rtools-packages](https://github.com/r-windows/rtools-packages#readme) repository explains how to build your own system libraries, and possibly contribute them to rtools.
