@@ -6,8 +6,6 @@ This version of Rtools upgrades the mingw-w64 gcc toolchains to version 8.3.0, a
 
 **Older versions of Rtools:** This document talks specifically about rtools40, the current version used for R 4.0.0 and newer. For information about previous versions of Rtools, please visit [this page](https://cran.r-project.org/bin/windows/Rtools/history.html).
 
----
-
 
 ## Installing Rtools40
 
@@ -19,8 +17,6 @@ To use rtools40, download the installer from CRAN:
  - On Windows 32-bit: [rtools40-i686.exe](https://cran.r-project.org/bin/windows/Rtools/rtools40-i686.exe) (i386 compilers only)
 
 ![](https://user-images.githubusercontent.com/216319/79896057-25fa8000-8408-11ea-9069-d01bfbd67786.png)
-
----
 
 
 ## Putting Rtools on the PATH
@@ -52,10 +48,8 @@ install.packages("jsonlite", type = "source")
 
 If this succeeds, you're good to go! See the links below to learn more about rtools40 and the Windows build infrastructure.
 
----
 
-
-## Further Documentation
+### Further Documentation
 
 More documentation about using rtools40 for R users and package authors:
 
