@@ -9,7 +9,7 @@ This version of Rtools upgrades the mingw-w64 gcc toolchains to version 8.3.0, a
 
 ## Installing Rtools40
 
-_Note that rtools40 is only needed build R packages with C/C++/Fortran code from source. By default, R for Windows installs the precompiled "binary packages" from CRAN, for which you do not need rtools!_
+Note that rtools40 is only needed build R packages with C/C++/Fortran code from source. By default, R for Windows installs the precompiled "binary packages" from CRAN, for which you do not need rtools!
 
 To use rtools40, download the installer from CRAN:
 
@@ -33,7 +33,7 @@ You can do this with a text editor, or you can even do it from R like so:
 writeLines('PATH="${RTOOLS40_HOME}\\usr\\bin;${PATH}"', con = "~/.Renviron")
 ```
 
-Now restart R and verify that `make` can be found, which should show the path to your Rtools installation.
+Now restart R, and verify that `make` can be found, which should show the path to your Rtools installation.
 
 ```r
 Sys.which("make")
