@@ -25,7 +25,7 @@ pre {
 }
 
 body {
-  margin-right: 5%;
-  margin-left: 5%;
+  margin-right: 4%;
+  margin-left: 4%;
 }
 </style>
