@@ -17,9 +17,9 @@ PATH="${RTOOLS40_HOME}\usr\bin;${PATH}"
 
 ## System Libraries and pacman
 
-Many R packages require external system libraries to build. Rtools40 includes a package manager called `pacman` which you can use to build and install system libraries provided via [rtools packages](https://github.com/r-windows/rtools-packages).
+Many R packages require external system libraries to build. Rtools40 includes a package manager called `pacman` which you can use to build and install system libraries provided via [rtools packages](https://github.com/r-windows/rtools-packages). The [`pacman` package manager](https://wiki.archlinux.org/index.php/pacman) has been ported from Arch Linux. Extensive documentation on how to use it is available from the [Arch Pacman webite](https://wiki.archlinux.org/index.php/pacman). 
 
-The [`pacman` package manager](https://wiki.archlinux.org/index.php/pacman) has been ported from Arch Linux. Extensive documentation on how to use it is available from the [Arch Pacman Site](https://wiki.archlinux.org/index.php/pacman). To start using Rtools, open an Rtools bash shell via the Start Menu. There are 3 links in the to start menu to start a terminal, they only differ in which toolchain is put on the PATH. For most purposes it does not matter which shortcut you use.
+To start using Rtools, open an Rtools bash shell via the Start Menu. There are 3 links in the to start menu to start a terminal, they only differ in which toolchain is put on the PATH. For most purposes it does not matter which shortcut you use.
 
 ![](https://user-images.githubusercontent.com/216319/73364595-1fe28080-42ab-11ea-9858-ac8c660757d6.png)
 
