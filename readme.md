@@ -49,7 +49,7 @@ install.packages("jsonlite", type = "source")
 If this succeeds, you're good to go! See the links below to learn more about rtools40 and the Windows build infrastructure.
 
 
-### Further Documentation
+## Further Documentation
 
 More documentation about using rtools40 for R users and package authors:
 
