@@ -12,7 +12,7 @@ browseURL('readme.html')
 # Alternative style
 library(rmarkdown)
 render("readme.md", html_document(self_contained = F, mathjax = NULL, highlight = 'haddock', 
-  theme = NULL, css=c('cranfaq.css')), 'cranstyle.html')
+  theme = NULL, css=c('https://cran.r-project.org/web/CRAN_web.css', 'extra.css')), 'cranstyle.html')
 txt <- readLines('cranstyle.html')
 txt <- sub('<title>.*</title>', '<title>Using Rtools40 on Windows</title>', txt)
 txt <- sub('.*<script src=".*', "", txt)
