@@ -31,6 +31,18 @@ For these reasons, the best way to set the PATH for R is in your `~/.Renviron` f
 These are almost the same, the only difference is the default PATH. The mingw32/mingw64 shell automatically put the respective gcc version on the path, whereas the msys shell has no toolchain on the path. Other than that there is no difference.
 
 
+## Does Rtools40 include git or svn? Why not?
+
+Rtools40 does not include git or svn clients. Most Windows users have [Git for Windows](https://git-scm.com/download/win) or [TortoiseSVN](https://tortoisesvn.net/) installed and configured, so we recommend to use these.
+
+
+## Is Git-for-Windows compatible with rtools40?
+
+Yes. If you have [Git for Windows](https://git-scm.com/download/win) you will be able to use `git` commands from the rtools40 shell as well. Note that Git for Windows also includes it's own shell called "Git Bash" which looks very similar to Rtools Bash. That is because they use exactly the same system.
+
+Most git commands will work the same in Rtools as Git Bash, however for git commands that use vim for interactive editing things, it is safer to use Git Bash (because it includes a special vim that rtools doesn't have).
+
+
 ## How to extract a tarball with symlinks
 
 Windows does not support symlinks. Cygwin has several ways to emulate symlinks, but each has limitations. To extract a tarball which contains symlinks (such as the official R source releases) you can set this environment variable: 
