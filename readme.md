@@ -54,7 +54,7 @@ If this succeeds, you're good to go! See the links below to learn more about rto
 More documentation about using rtools40 for R users and package authors:
 
  - [System dependencies and pacman](https://github.com/r-windows/docs/blob/master/rtools40.md#readme): using the new rtools package manager to install C/C++ libraries.
- - [FAQ](https://github.com/r-windows/docs/blob/master/faq.md#readme): Some common questions about Rtools40 and R on Windows.
+ - [FAQ](https://github.com/r-windows/docs/blob/master/faq.md#readme): Common questions about Rtools40 and R on Windows.
  - [Package fixes](https://github.com/r-windows/docs/blob/master/packages.md#readme): Some R packages that need extra help to compile. 
 
 Advanced information about building R base and building system libraries:

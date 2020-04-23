@@ -13,7 +13,7 @@ pacman -S mingw-w64-{i686,x86_64}-libxml2
 The XML package wants to have an `LIB_XML` variable:
 
 ```r
-Sys.setenv(LIB_XML="$(MINGW_PREFIX)")
+Sys.setenv(LIB_XML = "$(MINGW_PREFIX)")
 install.packages("XML", type= "source")
 ```
 
