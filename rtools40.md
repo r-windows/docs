@@ -79,40 +79,38 @@ Usually the first thing you want to do is run `pacman -Sy` which will refresh th
 pacman -Sy
 ```
 
-Let's try an example. Suppose you want to install the R package [Rsymphony](https://cran.r-project.org/package=Rsymphony) from source. Try to run the following in R (it won't succeed!):
+Let's try an example. Suppose you want to install the R package [fftwtools](https://cran.r-project.org/package=fftwtools) from source. Try to run the following in R (it won't succeed!):
 
 ```r
 # Run this in R/RStudio
-install.packages("Rsymphony", type = 'source')
+install.packages("fftwtools", type = 'source')
 ```
 
-The compilation fails because this package requires a system library called coin-or:
+The compilation fails because this package requires a system library called [FFTW](http://www.fftw.org/):
 
 ```
-* installing *source* package 'Rsymphony' ...
-** package 'Rsymphony' successfully unpacked and MD5 sums checked
+* installing *source* package 'fftwtools' ...
+** package 'fftwtools' successfully unpacked and MD5 sums checked
 ** using staged installation
 ** libs
 
 *** arch - i386
-"C:/rtools40/mingw32/bin/"g++ -std=gnu++11  -I"C:/PROGRA~1/R/R-4.0.0rc/include" -DNDEBUG -I/include
-    -O2 -Wall  -mfpmath=sse -msse2 -mstackrealign -c R_symphony.cc -o R_symphony.o
-R_symphony.cc:12:10: fatal error: coin/symphony.h: No such file or directory
- #include <coin/symphony.h>
-          ^~~~~~~~~~~~~~~~~
+"C:/rtools40/mingw32/bin/"gcc  -I"C:/PROGRA~1/R/R-4.0.0/include" -DNDEBUG          -O2 -Wall  -std=gnu99 -mfpmath=sse -msse2 -mstackrealign -c fftwtools.c -o fftwtools.o
+fftwtools.c:28:9: fatal error: fftw3.h: No such file or directory
+ #include<fftw3.h>
+         ^~~~~~~~~
 compilation terminated.
-
 ```
 
-Go back to your Rtools bash shell and run the following `pacman` command to install coin-or:
+Go back to your Rtools bash shell and run the following `pacman` command to install fftw:
 
 ```sh
-pacman -S  mingw-w64-{i686,x86_64}-coinor
+pacman -S  mingw-w64-{i686,x86_64}-fftw
 ```
 
-This command installs 2 new system packages: `mingw-w64-i686-coinor` and `mingw-w64-x86_64-coinor`.
+This command installs 2 new system packages: `mingw-w64-i686-fftw` and `mingw-w64-x86_64-fftw`.
 
-Now that the coin-or system dependency is available, try again to install the R package using the same line from above! This time it works!
+Now that the fftw system dependency is available, try again to install the R package using the same line from above! This time it works!
 
 ## Useful pacman commands
 
