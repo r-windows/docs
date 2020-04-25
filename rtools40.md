@@ -182,7 +182,7 @@ The readme file in the [r-windows/rtools-packages](https://github.com/r-windows/
 
 ## Building base R
 
-The same pacman libraries are used to build R packages are also used when building R itself! Have a look at the [r-base](https://github.com/r-windows/rtools-base#readme) repository to see how we build R for Windows.
+The same pacman libraries are used to build R packages are also used when building R itself! Have a look at the [r-windows/r-base](https://github.com/r-windows/r-base#readme) repository to see how we build R for Windows.
 
 
 ## Running a build server
