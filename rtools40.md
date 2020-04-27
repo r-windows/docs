@@ -9,7 +9,7 @@ Rtools40 does not conflict with other versions of Rtools and can be installed al
 - Use [rtools40-x86_64.exe](https://cran.r-project.org/bin/windows/Rtools/rtools40-x86_64.exe) on 64 bit Windows (recommended, includes `i386` and `x64` toolchains)
 - Use [rtools40-i686.exe](https://cran.r-project.org/bin/windows/Rtools/rtools40-i686.exe) on 32 bit Windows (includes `i386` toolchain only)
 
-Rtools does not put itself on the PATH. You can add the following line to your `~/.Renviron` file (where `~` is your documents folder) help R find rtools when installing packages.
+Rtools does not put itself on the PATH. You can add the following line to your `~/.Renviron` file (where `~` is your Documents folder by default) to help R find rtools when installing packages.
 
 ```
 PATH="${RTOOLS40_HOME}\usr\bin;${PATH}"
@@ -117,7 +117,7 @@ Now that the fftw system dependency is available, try again to install the R pac
 Use `pacman -Sl` to get a list of available packages that you can install. The list matches the [rtools-packages](https://github.com/r-windows/rtools-packages) repository on Github, where we maintain the build scripts. It is a pretty long list, that starts with something like this:
 
 ```
->> pacman Sl
+>> pacman -Sl
 mingw32 mingw-w64-i686-argtable 2.13-1
 mingw32 mingw-w64-i686-arrow 0.17.0-1
 mingw32 mingw-w64-i686-binutils 2.33.1-1 [installed]
@@ -134,13 +134,13 @@ mingw64 mingw-w64-x86_64-bwidget 1.9.12-1
 mingw64 mingw-w64-x86_64-bzip2 1.0.8-1 [installed]
 ```
 
-In rtools (or msys2) all packages are prefixed with `mingw-w64-686-` for the 32-bit version and with `mingw-w64-x86_64-` for the 64-bit version. For building CRAN packages, we usually need both 32 and 64 bit..
+In rtools (or msys2) all packages are prefixed with `mingw-w64-i686-` for the 32-bit version and with `mingw-w64-x86_64-` for the 64-bit version. For building CRAN packages, we usually need both 32 and 64 bit..
 
 
-Use `pacman -Su` to update all packages that you have installed already. This can be combined with `-y` which we explained earlier, refreshes the repository index:
+Use `pacman -Su` to update all packages that you have installed already. This can be combined with `-y` which, as explained earlier, refreshes the repository index:
 
 ```
->>pacman -Syu
+>> pacman -Syu
 :: Synchronizing package databases...
  mingw32 is up to date
  mingw64 is up to date
@@ -187,7 +187,7 @@ The same pacman libraries are used to build R packages are also used when buildi
 
 ## Running a build server
 
-If you run a winbuilder-like build server, it can be useful to install all the available system libraries from pacman, and keep them up-to-date. Obviously this takes a lot of space, regular users shouldn't do this!
+If you run a winbuilder-like build server, it can be useful to install all the available system libraries from pacman, and keep them up-to-date. Obviously this takes a lot of space; regular users shouldn't do this!
 
 The script below updates and installs __all packages from pacman__:
 
