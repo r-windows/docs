@@ -15,6 +15,9 @@ To use rtools40, download the installer from CRAN:
 
  - On Windows 64-bit: [rtools40-x86_64.exe](https://cran.r-project.org/bin/windows/Rtools/rtools40-x86_64.exe) (recommended: includes both i386 and x64 compilers)
  - On Windows 32-bit: [rtools40-i686.exe](https://cran.r-project.org/bin/windows/Rtools/rtools40-i686.exe) (i386 compilers only)
+ 
+__Note for RStudio users:__ please check you are using the latest version of RStudio (at least `1.2.5042`) to work with rtools40.
+
 
 ![](https://user-images.githubusercontent.com/216319/79896057-25fa8000-8408-11ea-9069-d01bfbd67786.png)
 
