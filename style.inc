@@ -1,5 +1,8 @@
 <link rel="stylesheet" href="https://cran.r-project.org/web/CRAN_web.css" type="text/css" />
 <style>
+a {
+  background-color: initial;
+}
 h2 {
   margin-top: 2em;
   border-bottom: solid lightgray 1px;

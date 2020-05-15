@@ -16,5 +16,6 @@ render("readme.md", html_document(self_contained = F, mathjax = NULL, highlight 
 txt <- readLines('cranstyle.html')
 txt <- sub('<title>.*</title>', '<title>Using Rtools40 on Windows</title>', txt)
 txt <- sub('.*<script src=".*', "", txt)
+txt <- sub('<a href="https://github.com', '<a target="_top" href="https://github.com', fixed = TRUE, txt)
 writeLines(txt, 'cranstyle.html')
 browseURL('cranstyle.html')
