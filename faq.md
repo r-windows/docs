@@ -70,8 +70,7 @@ Sys.which('make')
 Once `make` is available, R will lookup make variables via `R CMD config` to find the path to gcc and other tools. To test this manually in R, let's lookup the path to the C++11 compiler:
 
 ```r
-R <- file.path(R.home('bin'), 'R')
-system2(R, c("CMD", "config", "CXX11"))
+tools::Rcmd(c('config', 'CXX11'))
 # C:/Rtools/mingw_64/bin/g++
 ```
 
@@ -123,6 +122,8 @@ pacman -S mingw-w64-i686-gdb
 ```
 
 Same for `pacman -S mingw-w64-x86_64-drmingw` (which easier to use for simple debugging).
+
+See the [FAQ 8.4 *How do I debug code that I have compiled and dyn.load-ed?*](https://cran.r-project.org/bin/windows/base/rw-FAQ.html#How-do-I-debug-code-that-I-have-compiled-and-dyn_002eload_002ded_003f) to get started with debugging R packages.
 
 ## How to install rJava on Windows?
 
