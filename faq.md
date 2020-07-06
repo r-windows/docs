@@ -129,11 +129,11 @@ See the [FAQ 8.4 *How do I debug code that I have compiled and dyn.load-ed?*](ht
 
 The latest CRAN version of rJava will find the `jvm.dll` automatically, without manually setting the `PATH` or `JAVA_HOME`. However note that:
  
- - To use rJava in 32-bit R, you need [_Java for Windows x86_](https://www.oracle.com/java/technologies/javase-jdk8-downloads.html) ([direct download](https://github.com/portapps/untouched/releases/tag/oracle-jdk-8u251))
- - To use rJava in 64-bit R, you need [_Java for Windows x64_](https://www.oracle.com/java/technologies/javase-jdk8-downloads.html) ([direct download](https://github.com/portapps/untouched/releases/tag/oracle-jdk-8u251))
+ - To use rJava in 32-bit R, you need [_Java for Windows x86_](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html) ([direct download](https://github.com/portapps/untouched/releases/tag/oracle-jdk-8u251))
+ - To use rJava in 64-bit R, you need [_Java for Windows x64_](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html) ([direct download](https://github.com/portapps/untouched/releases/tag/oracle-jdk-8u251))
  - To build or check R packages with multi-arch (the default) you need to  __install both__ _Java For Windows x64_ as well as _Java for Windows x86_. On Win 64, the former installs in `C:\Program files\Java\` and the latter in `C:\Program Files (x86)\Java\` so they do not conflict.
 
-As of Java version 9, support for x86 (win32) has been discontinued. Hence the latest working multi-arch setup is to install both [jdk-8u251-windows-i586.exe](https://www.oracle.com/java/technologies/javase-jdk8-downloads.html) and [jdk-8u251-windows-x64.exe](https://www.oracle.com/java/technologies/javase-jdk8-downloads.html) and then the binary package from CRAN: 
+As of Java version 9, support for x86 (win32) has been discontinued. Hence the latest working multi-arch setup is to install both [jdk-8u251-windows-i586.exe](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html) and [jdk-8u251-windows-x64.exe](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html) and then the binary package from CRAN: 
 
 ```r
 install.packages("rJava")
