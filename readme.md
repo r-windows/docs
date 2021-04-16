@@ -1,11 +1,10 @@
 # Using Rtools40 on Windows
 
-Starting with R 4.0.0 (released April 2020), R for Windows uses a brand new toolchain bundle called **rtools40**.
+Starting with R 4.0.0 (released April 2020), R for Windows uses a toolchain bundle called **rtools40**.
 
-This version of Rtools upgrades the mingw-w64 gcc toolchains to version 8.3.0, and introduces a new build system based on [msys2](https://www.msys2.org/), which makes easier to build and maintain R itself as well as the system libraries needed by R packages on Windows. For more information about the latter, follow the links at the bottom of this document.
+This version of Rtools includes gcc 8.3.0, and introduces a new build system based on [msys2](https://www.msys2.org/), which makes easier to build and maintain R itself as well as the system libraries needed by R packages on Windows. For more information about the latter, follow the links at the bottom of this document.
 
-<span style="color:red">*This documentation is about rtools40, the current version used for R 4.0.0 and newer. For information about previous versions of Rtools that can be used with R 3.6.3 or older, please visit [this page](https://cran.r-project.org/bin/windows/Rtools/history.html).*</span>
-
+Older [versions](https://cran.r-project.org/bin/windows/Rtools/history.html) of Rtools were put together by Prof. Brian Ripley and Duncan Murdoch; the current version is maintained by Jeroen Ooms. The best place for reporting bugs is via the [r-windows](https://github.com/r-windows) organization on GitHub.
 
 ## Installing Rtools40
 
