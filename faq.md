@@ -112,16 +112,16 @@ See the [r-windows/r-base](https://github.com/r-windows/r-base) repository for s
 Yes, both [GDB](https://www.gnu.org/software/gdb/) and [drmingw](https://github.com/jrfonseca/drmingw) via the package manager. To install the 64-bit version run this in the mingw64 shell:
 
 ```sh
-pacman -S mingw-w64-x86_64-gdb
+pacman -Sy mingw-w64-x86_64-gdb
 ```
 
 To install 32-bit gdb use:
 
 ```sh
-pacman -S mingw-w64-i686-gdb
+pacman -Sy mingw-w64-i686-gdb
 ```
 
-Same for `pacman -S mingw-w64-x86_64-drmingw` (which easier to use for simple debugging).
+Same for `pacman -Sy mingw-w64-x86_64-drmingw` (which easier to use for simple debugging).
 
 See the [FAQ 8.4 *How do I debug code that I have compiled and dyn.load-ed?*](https://cran.r-project.org/bin/windows/base/rw-FAQ.html#How-do-I-debug-code-that-I-have-compiled-and-dyn_002eload_002ded_003f) to get started with debugging R packages.
 
