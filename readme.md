@@ -4,7 +4,7 @@ Starting with R 4.0.0 (released April 2020), R for Windows uses a toolchain bund
 
 This version of Rtools includes gcc 8.3.0, and introduces a new build system based on [msys2](https://www.msys2.org/), which makes easier to build and maintain R itself as well as the system libraries needed by R packages on Windows. For more information about the latter, follow the links at the bottom of this document.
 
-Older [versions](https://cran.r-project.org/bin/windows/Rtools/history.html) of Rtools were put together by Prof. Brian Ripley and Duncan Murdoch; the current version is maintained by Jeroen Ooms. The best place for reporting bugs is via the [r-windows](https://github.com/r-windows) organization on GitHub.
+The current version of Rtools is maintained by Jeroen Ooms, [older versions](https://cran.r-project.org/bin/windows/Rtools/history.html) were put together by Prof. Brian Ripley and Duncan Murdoch. The best place for reporting bugs is via the [r-windows](https://github.com/r-windows) organization on GitHub.
 
 ## Installing Rtools40
 
@@ -15,7 +15,7 @@ To use rtools40, download the installer from CRAN:
  - On Windows 64-bit: [rtools40-x86_64.exe](https://cran.r-project.org/bin/windows/Rtools/rtools40-x86_64.exe) (recommended: includes both i386 and x64 compilers)
  - On Windows 32-bit: [rtools40-i686.exe](https://cran.r-project.org/bin/windows/Rtools/rtools40-i686.exe) (i386 compilers only)
  
-__Note for RStudio users:__ please check you are using the latest version of RStudio (at least `1.2.5042`) to work with rtools40.
+__Note for RStudio users:__ please check you are using a recent version of RStudio (at least `1.2.5042`) to work with rtools40.
 
 
 ![](https://user-images.githubusercontent.com/216319/79896057-25fa8000-8408-11ea-9069-d01bfbd67786.png)
