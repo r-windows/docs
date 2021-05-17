@@ -1,10 +1,12 @@
 # Using Rtools40 on Windows
 
-Starting with R 4.0.0 (released April 2020), R for Windows uses a toolchain bundle called **rtools40**.
+Starting with R 4.0.0 (released April 2020), R for Windows uses a toolchain bundle called **rtools40**. 
 
 This version of Rtools includes gcc 8.3.0, and introduces a new build system based on [msys2](https://www.msys2.org/), which makes easier to build and maintain R itself as well as the system libraries needed by R packages on Windows. For more information about the latter, follow the links at the bottom of this document.
 
-The current version of Rtools is maintained by Jeroen Ooms, [older versions](https://cran.r-project.org/bin/windows/Rtools/history.html) were put together by Prof. Brian Ripley and Duncan Murdoch. The best place for reporting bugs is via the [r-windows](https://github.com/r-windows) organization on GitHub.
+As of May 2021, rtools40 contains an additional x64-ucrt toolchain based on gcc-10 for testing R packages and system libraries with the experimental ucrt builds of R.
+
+The current version of Rtools is maintained by Jeroen Ooms, [older editions](https://cran.r-project.org/bin/windows/Rtools/history.html) were put together by Prof. Brian Ripley and Duncan Murdoch. The best place for reporting bugs is via the [r-windows](https://github.com/r-windows) organization on GitHub.
 
 ## Installing Rtools40
 
@@ -12,7 +14,7 @@ Note that rtools40 is only needed build R packages with C/C++/Fortran code from 
 
 To use rtools40, download the installer from CRAN:
 
- - On Windows 64-bit: [rtools40v2-x86_64.exe](https://cran.r-project.org/bin/windows/Rtools/rtools40v2-x86_64.exe) (recommended: includes both i386 and x64 compilers)
+ - On Windows 64-bit: [rtools40v2-x86_64.exe](https://cran.r-project.org/bin/windows/Rtools/rtools40v2-x86_64.exe) (recommended: includes i386, x64, and x64-ucrt compilers)
  - On Windows 32-bit: [rtools40-i686.exe](https://cran.r-project.org/bin/windows/Rtools/rtools40-i686.exe) (i386 compilers only)
  
 __Note for RStudio users:__ please check you are using a recent version of RStudio (at least `1.2.5042`) to work with rtools40.
@@ -29,7 +31,7 @@ After installation is complete, you need to perform __one more step__ to be able
 PATH="${RTOOLS40_HOME}\usr\bin;${PATH}"
 ```
 
-You can do this with a text editor, or you can even do it from R like so:
+You can do this with a text editor, or from R like so (note that in R code you need to escape backslashes):
 
 ```r
 writeLines('PATH="${RTOOLS40_HOME}\\usr\\bin;${PATH}"', con = "~/.Renviron")
