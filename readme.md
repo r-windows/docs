@@ -2,11 +2,11 @@
 
 Starting with R 4.0.0 (released April 2020), R for Windows uses a toolchain bundle called **rtools40**. 
 
-This version of Rtools includes gcc 8.3.0, and introduces a new build system based on [msys2](https://www.msys2.org/), which makes easier to build and maintain R itself as well as the system libraries needed by R packages on Windows. For more information about the latter, follow the links at the bottom of this document.
+This version of Rtools includes gcc 8.3.0, and introduces a new build system based on [msys2](https://www.msys2.org/), which makes easier to build and maintain R itself as well as the system libraries needed by R packages on Windows.
+Recent builds of rtools40 also contain an additional gcc-10 ucrt toolchain for testing R packages and system libraries with the experimental ucrt builds of R-devel.
+For more information about these topics, follow the links at the bottom of this document.
 
-As of May 2021, rtools40 contains an additional x64-ucrt toolchain based on gcc-10 for testing R packages and system libraries with the experimental ucrt builds of R.
-
-The current version of Rtools is maintained by Jeroen Ooms, [older editions](https://cran.r-project.org/bin/windows/Rtools/history.html) were put together by Prof. Brian Ripley and Duncan Murdoch. The best place for reporting bugs is via the [r-windows](https://github.com/r-windows) organization on GitHub.
+The current version of Rtools is maintained by Jeroen Ooms. [Older editions](https://cran.r-project.org/bin/windows/Rtools/history.html) were put together by Prof. Brian Ripley and Duncan Murdoch. The best place for reporting bugs is via the [r-windows](https://github.com/r-windows) organization on GitHub.
 
 ## Installing Rtools40
 
@@ -59,6 +59,7 @@ More documentation about using rtools40 for R users and package authors:
 
  - [Using pacman](https://github.com/r-windows/docs/blob/master/rtools40.md#readme): the new rtools package manager to build and install C/C++ system libraries.
  - [Installing R packages](https://github.com/r-windows/docs/blob/master/packages.md#readme): Some older R packages that need extra help to compile.
+ - [Testing packages with ucrt64](https://github.com/r-windows/docs/blob/master/ucrt.md#readme): Instructions for building and testing using the experimental UCRT toolchains.
  - [FAQ](https://github.com/r-windows/docs/blob/master/faq.md#readme): Common questions about Rtools40 and R on Windows.
 
 Advanced information about building R base and building system libraries:
