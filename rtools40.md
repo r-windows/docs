@@ -1,13 +1,13 @@
 # System Libraries in Rtools40
 
-R on Windows toolchain and package manager based on gcc 8.3.0 and msys2.
+R on Windows toolchain and package manager based on msys2.
 
-## Installing Rtools40
+## Installing Rtools4
 
 Rtools40 does not conflict with other versions of Rtools and can be installed alongside existing Rtools 3.5 installations.
 
-- Use [rtools40v2-x86_64.exe](https://cran.r-project.org/bin/windows/Rtools/rtools40v2-x86_64.exe) on 64 bit Windows (recommended, includes `i386` and `x64` toolchains)
-- Use [rtools40-i686.exe](https://cran.r-project.org/bin/windows/Rtools/rtools40-i686.exe) on 32 bit Windows (includes `i386` toolchain only)
+- Use [rtools40v2-x86_64.exe](https://cran.r-project.org/bin/windows/Rtools/rtools40v2-x86_64.exe) on 64 bit Windows
+- Use [rtools40-i686.exe](https://cran.r-project.org/bin/windows/Rtools/rtools40-i686.exe) on 32 bit Windows
 
 Rtools does not put itself on the PATH. You can add the following line to your `~/.Renviron` file (where `~` is your Documents folder by default) to help R find rtools when installing packages.
 
@@ -17,7 +17,7 @@ PATH="${RTOOLS40_HOME}\usr\bin;${PATH}"
 
 ## System Libraries and pacman
 
-Many R packages require external system libraries to build. Rtools40 includes a package manager called `pacman` which you can use to build and install system libraries provided via [rtools packages](https://github.com/r-windows/rtools-packages). The [`pacman` package manager](https://wiki.archlinux.org/index.php/pacman) has been ported from Arch Linux. Extensive documentation on how to use it is available from the [Arch Pacman webite](https://wiki.archlinux.org/index.php/pacman). 
+Many R packages require external system libraries to build. Rtools4 includes a package manager called `pacman` which you can use to build and install system libraries provided via [rtools packages](https://github.com/r-windows/rtools-packages). The [`pacman` package manager](https://wiki.archlinux.org/index.php/pacman) has been ported from Arch Linux. Extensive documentation on how to use it is available from the [msys2 documentation](https://www.msys2.org/docs/package-management/) and the [Arch Pacman webite](https://wiki.archlinux.org/index.php/pacman). 
 
 To start using Rtools, open an Rtools bash shell via the Start Menu. There are 3 links in the to start menu to start a terminal, they only differ in which toolchain is put on the PATH. For most purposes it does not matter which shortcut you use.
 

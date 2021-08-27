@@ -5,10 +5,11 @@ These are some common issues related to installing R packages on Windows with Rt
 
 ## What is Rtools
 
-Rtools is the toolchain bundle that is used on Windows to build R base and R packages that contain compiled code. You can download it from [CRAN](https://cran.r-project.org/bin/windows/Rtools/). There are currently two version of Rtools:
+Rtools is the toolchain bundle that is used on Windows to build R base and R packages that contain compiled code. You can download it from [CRAN](https://cran.r-project.org/bin/windows/Rtools/). The latest builds of rtools4 contain 3 toolchains:
 
- - Rtools35 (gcc 4.9.3): used by old R versions 3.3 - 3.6. No longer updated.
- - Rtools40 (gcc 8.3.0): current toolchain, used for R 4.0 and up.
+ - `C:\rtools40\mingw32`: the 32-bit gcc-8-3.0 toolchain used as of R 4.0.0
+ - `C:\rtools40\mingw64`: the 64-bit gcc-8-3.0 toolchain used as of R 4.0.0
+ - `C:\rtools40\ucrt64`: a new 64-bit gcc-10.3.0 toolchain targeting ucrt
 
 You only need Rtools if you want to compile R packages from source that contain C/C++/Fortran. By default, R for Windows installs the precompiled _binary packages_ from CRAN, for which you do not need rtools.
 
