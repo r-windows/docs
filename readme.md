@@ -6,7 +6,7 @@ Starting with R 4.0.0 (released April 2020), R for Windows uses a toolchain bund
  - `C:\rtools40\mingw64`: the 64-bit gcc-8-3.0 toolchain used as of R 4.0.0
  - `C:\rtools40\ucrt64`: a new 64-bit gcc-10.3.0 toolchain targeting ucrt
 
-The [msys2 documentation](https://www.msys2.org/docs/environments/#msvcrt-vs-ucrt) gives an overview of the supported environments in msys2 and the main differences between MSVCRT and UCRT. The links at the bottom of this document also have more information.
+The [msys2 documentation](https://www.msys2.org/docs/environments/#msvcrt-vs-ucrt) gives an overview of the supported environments in msys2 and a comparison of MSVCRT and UCRT. The main difference between upstream msys2 and rtools4 is that our toolchains and libraries are configured for static linking, whereas upstream msys2 prefers dynamic linking. The references at the bottom of this document contain more information.
 
 The current version of Rtools is maintained by Jeroen Ooms. [Older editions](https://cran.r-project.org/bin/windows/Rtools/history.html) were put together by Prof. Brian Ripley and Duncan Murdoch. The best place for reporting bugs is via the [r-windows](https://github.com/r-windows) organization on GitHub.
 
