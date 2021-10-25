@@ -146,5 +146,15 @@ The binary package from CRAN should pick up on the jvm by itself. __Experts only
 install.packages('rJava', type = 'source', INSTALL_opts='--merge-multiarch')
 ```
 
+## How to cite rtools?
 
+If you are using bibtex please use the following format:
 
+```
+@Manual{rtools,
+title = {rtools v4.0.0: the Win toolchain bundle to build base R \& compiled-code packages.},
+author = {{Jeroen Ooms}},
+year = {2020},
+url = {cran.r-project.org/bin/windows/Rtools},
+}
+```
