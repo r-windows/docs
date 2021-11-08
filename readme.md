@@ -36,7 +36,7 @@ PATH="${RTOOLS40_HOME}\usr\bin;${PATH}"
 You can do this with a text editor, or from R like so (note that in R code you need to escape backslashes):
 
 ```r
-writeLines('PATH="${RTOOLS40_HOME}\\usr\\bin;${PATH}"', con = "~/.Renviron")
+write('PATH="${RTOOLS40_HOME}\\usr\\bin;${PATH}"', file = "~/.Renviron", append = TRUE)
 ```
 
 Now restart R, and verify that `make` can be found, which should show the path to your Rtools installation.
