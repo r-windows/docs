@@ -16,8 +16,8 @@ Note that Rtools is only needed build R packages with C/C++/Fortran code from so
 
 To use rtools, download the installer from CRAN:
 
- - On Windows 64-bit: [rtools40v2-x86_64.exe](https://cran.r-project.org/bin/windows/Rtools/rtools40v2-x86_64.exe) (includes both i386 and x64 compilers)
- - On Windows 32-bit: [rtools40-i686.exe](https://cran.r-project.org/bin/windows/Rtools/rtools40-i686.exe) (i386 compilers only)
+ - On Windows 64-bit: [rtools40-x86_64.exe](https://cran.r-project.org/bin/windows/Rtools/rtools40-x86_64.exe) (includes both i386 and x64 compilers). Permanent url: [rtools40-x86_64.exe](https://github.com/r-windows/rtools-installer/releases/download/2022-01-12/rtools40-x86_64.exe).
+ - On Windows 32-bit: [rtools40-i686.exe](https://cran.r-project.org/bin/windows/Rtools/rtools40-i686.exe) (i386 compilers only). Permanent url: [rtools40-i686.exe](https://github.com/r-windows/rtools-installer/releases/download/2020-05-05/rtools40-i686.exe).
  
 __Note for RStudio users:__ please check you are using a recent version of RStudio (at least `1.2.5042`) to work with rtools4.
 
