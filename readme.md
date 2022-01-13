@@ -19,7 +19,7 @@ To use rtools, download the installer from CRAN:
  - On Windows 64-bit: [rtools40-x86_64.exe](https://cran.r-project.org/bin/windows/Rtools/rtools40-x86_64.exe) (includes both i386 and x64 compilers). Permanent url: [rtools40-x86_64.exe](https://github.com/r-windows/rtools-installer/releases/download/2022-01-12/rtools40-x86_64.exe).
  - On Windows 32-bit: [rtools40-i686.exe](https://cran.r-project.org/bin/windows/Rtools/rtools40-i686.exe) (i386 compilers only). Permanent url: [rtools40-i686.exe](https://github.com/r-windows/rtools-installer/releases/download/2020-05-05/rtools40-i686.exe).
  
-__Note for RStudio users:__ please check you are using a recent version of RStudio (at least `1.2.5042`) to work with rtools4.
+__Note for RStudio users:__ you need at least RStudio version `1.2.5042` to work with rtools4.
 
 
 ![](https://user-images.githubusercontent.com/216319/79896057-25fa8000-8408-11ea-9069-d01bfbd67786.png)
@@ -27,7 +27,7 @@ __Note for RStudio users:__ please check you are using a recent version of RStud
 
 ## Putting Rtools on the PATH
 
-After installation is complete, you need to perform __one more step__ to be able to compile R packages: you need to put the location of the Rtools _make utilities_ (`bash`, `make`, etc) on the `PATH`. The easiest way to do so is create a text file `.Renviron` in your Documents folder which contains the following line:
+After installation is complete, you need to perform __one more step__ to be able to compile R packages: we put the location of the Rtools _make utilities_ (`bash`, `make`, etc) on the `PATH`. The easiest way to do so is by creating a text file `.Renviron` in your Documents folder which contains the following line:
 
 ```
 PATH="${RTOOLS40_HOME}\usr\bin;${PATH}"
@@ -39,14 +39,14 @@ You can do this with a text editor, or from R like so (note that in R code you n
 write('PATH="${RTOOLS40_HOME}\\usr\\bin;${PATH}"', file = "~/.Renviron", append = TRUE)
 ```
 
-Now restart R, and verify that `make` can be found, which should show the path to your Rtools installation.
+Restart R, and verify that `make` can be found, which should show the path to your Rtools installation.
 
 ```r
 Sys.which("make")
 ## "C:\\rtools40\\usr\\bin\\make.exe"
 ```
 
-If this works, you can try to install an R package from source:
+Now try to install an R package from source:
 
 ```r
 install.packages("jsonlite", type = "source")
