@@ -71,4 +71,4 @@ Advanced information about building R base and building system libraries:
  - [rtools-backports](https://github.com/r-windows/rtools-backports#readme): Backported C/C++ libraries for the gcc-4.9.3 legacy toolchain (for R 3.3 - 3.6)
  - [rtools-installer](https://github.com/r-windows/rtools-installer#readme): Builds the rtools4 installer bundle.
 
-[^1]: the ucrt64 toolchain in rtools4 uses the exact same version of gcc, mingw-w64 and custom patches as the cross-compiled MXE bundle from Tomas Kalibera (tentatively known as rtools42) and is fully compatible.
+[^1]: the ucrt64 toolchain in rtools4 uses the exact same version of gcc, mingw-w64 and additional patches as the cross-compiled MXE bundle from Tomas Kalibera (tentatively known as [rtools42](https://developer.r-project.org/WindowsBuilds/winutf8/ucrt3/howto.html)) and they are fully compatible.
