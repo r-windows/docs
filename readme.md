@@ -2,9 +2,9 @@
 
 Starting with R 4.0.0 (released April 2020), R for Windows uses a toolchain bundle called **rtools4**. This version of Rtools is based on [msys2](https://www.msys2.org/), which makes easier to build and maintain R itself as well as the system libraries needed by R packages on Windows. The latest builds of rtools4 contain 3 toolchains:
 
- - `C:\rtools40\mingw32`: the 32-bit gcc-8-3.0 toolchain used as of R 4.0.0
- - `C:\rtools40\mingw64`: the 64-bit gcc-8-3.0 toolchain used as of R 4.0.0
- - `C:\rtools40\ucrt64`: a new 64-bit gcc-10.3.0 toolchain targeting ucrt
+ - `C:\rtools40\mingw32`: the 32-bit gcc-8-3.0 toolchain for R 4.0 - 4.1
+ - `C:\rtools40\mingw64`: the 64-bit gcc-8-3.0 toolchain for R 4.0 - 4.1
+ - `C:\rtools40\ucrt64`: a 64-bit gcc-10.3.0 ucrt toolchain for R 4.2 [^1]
 
 The [msys2 documentation](https://www.msys2.org/docs/environments/#msvcrt-vs-ucrt) gives an overview of the supported environments in msys2 and a comparison of MSVCRT and UCRT. The main difference between upstream msys2 and rtools4 is that our toolchains and libraries are configured for static linking, whereas upstream msys2 prefers dynamic linking. The references at the bottom of this document contain more information.
 
@@ -70,3 +70,5 @@ Advanced information about building R base and building system libraries:
  - [rtools-packages](https://github.com/r-windows/rtools-packages#readme): Toolchains and static libraries for rtools4 (GCC 8+)
  - [rtools-backports](https://github.com/r-windows/rtools-backports#readme): Backported C/C++ libraries for the gcc-4.9.3 legacy toolchain (for R 3.3 - 3.6)
  - [rtools-installer](https://github.com/r-windows/rtools-installer#readme): Builds the rtools4 installer bundle.
+
+[^1]: the ucrt64 toolchain in rtools4 uses the exact same version of gcc, mingw-w64 and custom patches as the cross-compiled MXE bundle from Tomas Kalibera (tentatively known as rtools42) and is fully compatible.
