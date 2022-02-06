@@ -16,7 +16,7 @@ Note that Rtools is only needed build R packages with C/C++/Fortran code from so
 
 To use rtools, download the installer from CRAN:
 
- - On Windows 64-bit: [rtools40-x86_64.exe](https://cran.r-project.org/bin/windows/Rtools/rtools40-x86_64.exe) (includes both i386 and x64 compilers). Permanent url: [rtools40-x86_64.exe](https://github.com/r-windows/rtools-installer/releases/download/2022-01-25/rtools40-x86_64.exe).
+ - On Windows 64-bit: [rtools40-x86_64.exe](https://cran.r-project.org/bin/windows/Rtools/rtools40-x86_64.exe) (includes both i386 and x64 compilers). Permanent url: [rtools40-x86_64.exe](https://github.com/r-windows/rtools-installer/releases/download/2022-02-06/rtools40-x86_64.exe).
  - On Windows 32-bit: [rtools40-i686.exe](https://cran.r-project.org/bin/windows/Rtools/rtools40-i686.exe) (i386 compilers only). Permanent url: [rtools40-i686.exe](https://github.com/r-windows/rtools-installer/releases/download/2020-05-05/rtools40-i686.exe).
  
 __Note for RStudio users:__ you need at least RStudio version `1.2.5042` to work with rtools4.
@@ -71,4 +71,4 @@ Advanced information about building R base and building system libraries:
  - [rtools-backports](https://github.com/r-windows/rtools-backports#readme): Backported C/C++ libraries for the gcc-4.9.3 legacy toolchain (for R 3.3 - 3.6)
  - [rtools-installer](https://github.com/r-windows/rtools-installer#readme): Builds the rtools4 installer bundle.
 
-[^1]: the ucrt64 toolchain in rtools4 uses the exact same version of gcc, mingw-w64 and additional patches as the cross-compiled MXE bundle from Tomas Kalibera (tentatively known as [rtools42](https://developer.r-project.org/WindowsBuilds/winutf8/ucrt3/howto.html)) and they are fully compatible.
+[^1]: the ucrt64 toolchain in rtools4 uses the same version of mingw-w64, gcc, and additional patches as the cross-compiled MXE bundle from Tomas Kalibera (tentatively known as [rtools42](https://developer.r-project.org/WindowsBuilds/winutf8/ucrt3/howto.html)) and they are fully compatible.
